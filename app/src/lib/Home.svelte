@@ -1,7 +1,9 @@
 <script>
     import dayjs from "dayjs";
     import "dayjs/locale/zh-cn";
+    import Modal from "svelte-simple-modal";
 
+    import Setting from "./Setting.svelte";
     import { getRgbColor } from "../tools/color";
     import bgImg from "../assets/bg.png";
 
@@ -33,7 +35,9 @@
 >
     <div class="header">
         <div>你好</div>
-        <div>设置</div>
+        <Modal>
+            <Setting />
+        </Modal>
     </div>
     <div class="search">
         <input type="text" bind:value={search} class="search-input" placeholder="Search Google" />
