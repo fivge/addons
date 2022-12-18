@@ -1,5 +1,7 @@
 <script>
     import { getContext } from "svelte";
+    import Fa from "svelte-fa/src/fa.svelte";
+    import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
     import Popup from "./Popup.svelte";
 
     const { open } = getContext("simple-modal");
@@ -8,5 +10,5 @@
 </script>
 
 <div on:click={onPopup}>
-    <i class="fa-solid fa-screwdriver-wrench" />
+    <Fa icon={faScrewdriverWrench} />
 </div>

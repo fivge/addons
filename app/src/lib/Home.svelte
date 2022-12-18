@@ -24,6 +24,13 @@
 
     $: rgbColor = getRgbColor(config.themeColor);
 
+    const onSearch = ({ keyCode }) => {
+        if (keyCode === 13) {
+            const url = "https://www.google.com/search?q=" + encodeURIComponent(search);
+            chrome.tabs.create({ url });
+        }
+    };
+
     setInterval(() => {
         now = new Date();
     }, 30 * 1000);
@@ -40,7 +47,7 @@
         </Modal>
     </div>
     <div class="search">
-        <input type="text" bind:value={search} class="search-input" placeholder="Search Google" />
+        <input type="search" bind:value={search} class="search-input" placeholder="Search Google" on:keydown={onSearch} />
     </div>
     <div class="footer">
         <div class="time-zone">
